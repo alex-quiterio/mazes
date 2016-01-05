@@ -57,11 +57,11 @@ module Api
    # resource loaders
    #
    def load_collection
-    @collection ||= resource_scope.to_a
+    @collection = resource_scope.to_a
    end
 
    def load_resource
-    @resource ||= resource_scope.find(params[:id])
+    @resource = resource_scope.find(params[:id])
    end
 
    # resource actioners
