@@ -17,7 +17,6 @@ describe Book do
     author_2 = Fabricate(:author)
     book = Fabricate(:book, author: author_1)
     author_2.books << book
-    #expect {  }.to raise_error(Exception)
     expect(book.author).to eq(author_2)
    end
   end
