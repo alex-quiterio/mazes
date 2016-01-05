@@ -15,7 +15,7 @@ module Api
       end
 
       def resource_params
-        params.require(:book).permit(:title, :category, :user_id, :author_id, :book_ids => [])
+        params.require(:book).permit(:title, :genre, :user_id, :author_id)
       end
 
     end
