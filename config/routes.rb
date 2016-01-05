@@ -1,7 +1,7 @@
 require_dependency 'api_constraint'
 
 Rails.application.routes.draw do
-  api_v1 = ApiConstraint.new('myst', version: '1', default: true, format: :json)
+  api_v1 = ApiConstraint.new('myst', version: '1', default: true)
   namespace :api do
     scope module: api_v1.module, constraints: api_v1 do
       resources :authors do

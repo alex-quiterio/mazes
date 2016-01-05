@@ -1,8 +1,8 @@
 class ApiConstraint
 
-  def initialize(vendor, version: "1", default: false, format: :json)
+  def initialize(vendor, version: "1", default: false)
     @vendor = vendor
-    @version, @default, @format = version, default, format
+    @version, @default = version, default
   end
 
   def module
@@ -11,6 +11,6 @@ class ApiConstraint
 
   def matches?(request)
    return @default unless request.headers.key?('Accept')
-   return request.headers['Accept'].include?("application/vnd.#{@vendor}-v#{@version}+#{@format}")
+   return request.headers['Accept'].include?("application/vnd.#{@vendor}-v#{@version}+")
   end
 end
