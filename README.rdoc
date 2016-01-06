@@ -36,4 +36,4 @@ curl -X POST -H "Accept: application/vnd.myst-v1+json" -H "Authorization: <your 
 </code>
 
 <b>How to run the test suite:</b>
-<code>rake db:test:prepare && rake rspec</code>
+<code>rake db:test:prepare && rake</code>
