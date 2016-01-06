@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
    render_json_error('Not allowed to perform this action', status: :unauthorized)
   end
 
+  rescue_from ActionController::ParameterMissing do |exception|
+    render_json_error(exception.message, status: :bad_request)
+  end
+
   rescue_from ActiveRecord::RecordNotFound do |exception|
    render_json_error(exception, status: :not_found)
   end

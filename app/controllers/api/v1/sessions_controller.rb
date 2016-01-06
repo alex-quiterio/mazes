@@ -2,11 +2,13 @@ module Api
   module V1
     class SessionsController < ApplicationController
 
+      Swagger::Docs::Generator::set_real_methods
+
       def create
         user = User.find_by_email(params[:email])
         if user.present? && user.valid_password?(params[:password])
           user.remember_me!(session_ttl)
-          render_json_dump({token: user.remember_me, ttl: session_ttl.from_now.to_s})
+          render_json_dump({token: user.remember_token, ttl: session_ttl.from_now.to_s})
         else user.present?
           render_json_error('invalid email or password', status: :unprocessable_entity)
         end
