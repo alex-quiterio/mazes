@@ -2,17 +2,17 @@
 
 {<img src="https://travis-ci.org/alex-quiterio/mazes.svg" alt="Build Status" />}[https://travis-ci.org/alex-quiterio/mazes]
 
-* Ruby version
+<b>Ruby version:</b>
 - tested with 2.1.3 
 
-* Database creation:
+<b>Database creation:</b>
 <code>rake db:migrate</code>
 
-* Database initialization:
+<b>Database initialization:</b>
 <code>rake db:seed</code>
 
-* API Call Examples:
+<b>API Call Examples:</b>
 
 
-* How to run the test suite
+<b>How to run the test suite:</b>
 <code>rake db:test:prepare && rake rspec</code>
