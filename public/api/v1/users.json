@@ -1,0 +1,211 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "/",
+  "resourcePath": "users",
+  "apis": [
+    {
+      "path": "api/users",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authentication",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user[email]",
+              "type": "string",
+              "description": "User Email",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user[password]",
+              "type": "string",
+              "description": "User Password",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user[password_confirmation]",
+              "type": "string",
+              "description": "User Password Confirmation",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user[role]",
+              "type": "string",
+              "description": "User role",
+              "required": true,
+              "allowableValues": {
+                "valueType": "LIST",
+                "values": [
+                  "guest",
+                  "normal",
+                  "admin"
+                ]
+              }
+            }
+          ],
+          "summary": "Creates a new User",
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "method": "post",
+          "nickname": "Api::V1::Users#create"
+        }
+      ]
+    },
+    {
+      "path": "api/users/{id}",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "User Id",
+              "required": true
+            }
+          ],
+          "summary": "Lists a single User",
+          "responseMessages": [
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "get",
+          "nickname": "Api::V1::Users#show"
+        }
+      ]
+    },
+    {
+      "path": "api/users/{id}",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authentication",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "User Id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user[email]",
+              "type": "string",
+              "description": "Book Title",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user[password]",
+              "type": "string",
+              "description": "Users Password",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user[password_confirmation]",
+              "type": "string",
+              "description": "User Password Confirmation",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "user[role]",
+              "type": "string",
+              "description": "User role",
+              "required": true,
+              "allowableValues": {
+                "valueType": "LIST",
+                "values": [
+                  "guest",
+                  "normal",
+                  "admin"
+                ]
+              }
+            }
+          ],
+          "summary": "Updates an existing User",
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "method": "patch",
+          "nickname": "Api::V1::Users#update"
+        }
+      ]
+    },
+    {
+      "path": "api/users/{id}",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "User Id",
+              "required": true
+            }
+          ],
+          "summary": "Deletes an existing User",
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "delete",
+          "nickname": "Api::V1::Users#destroy"
+        }
+      ]
+    }
+  ]
+}

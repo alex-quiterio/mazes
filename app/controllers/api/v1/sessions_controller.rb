@@ -27,6 +27,24 @@ module Api
         2.hours
       end
 
+      # Users Swagger Documentation
+      #
+      swagger_controller :sessions, "API Sessions"
+
+      swagger_api :create do
+        summary "Creates a new API Session with TTL = 2 hours"
+        param :form, :email, :string, :required, "User Email"
+        param :form, :password, :string, :required, "User Password"
+        response :unauthorized
+        response :not_acceptable
+      end
+
+      swagger_api :destroy do
+        summary "Destroy the current API session from that user"
+        param :path, :token, :integer, :required, "User Authentication Token"
+        response :not_acceptable
+      end
+
     end
   end
 end

@@ -1,0 +1,66 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "/",
+  "resourcePath": "sessions",
+  "apis": [
+    {
+      "path": "api/users/sign_in",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "form",
+              "name": "email",
+              "type": "string",
+              "description": "User Email",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "password",
+              "type": "string",
+              "description": "User Password",
+              "required": true
+            }
+          ],
+          "summary": "Creates a new API Session with TTL = 2 hours",
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "method": "post",
+          "nickname": "Api::V1::Sessions#create"
+        }
+      ]
+    },
+    {
+      "path": "api/users/sign_out",
+      "operations": [
+        {
+          "parameters": [
+
+          ],
+          "summary": "Destroy the current API session from that user",
+          "responseMessages": [
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "method": "delete",
+          "nickname": "Api::V1::Sessions#destroy"
+        }
+      ]
+    }
+  ]
+}

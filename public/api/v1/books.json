@@ -1,0 +1,226 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "/",
+  "resourcePath": "books",
+  "apis": [
+    {
+      "path": "api/authors/{author_id}/books",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "author_id",
+              "type": "integer",
+              "description": "Author Id",
+              "required": false
+            }
+          ],
+          "summary": "Fetches all Books",
+          "method": "get",
+          "nickname": "Api::V1::Books#index"
+        }
+      ]
+    },
+    {
+      "path": "api/authors/{author_id}/books",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authentication",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "book[title]",
+              "type": "string",
+              "description": "Book Title",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "book[author_id]",
+              "type": "string",
+              "description": "Author's Book",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "book[genre]",
+              "type": "string",
+              "description": "Book Genre",
+              "required": true,
+              "allowableValues": {
+                "valueType": "LIST",
+                "values": [
+                  "undefined",
+                  "poetry",
+                  "crime",
+                  "romance",
+                  "horror",
+                  "fantasy",
+                  "mystery",
+                  "western"
+                ]
+              }
+            }
+          ],
+          "summary": "Creates a new Book",
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "method": "post",
+          "nickname": "Api::V1::Books#create"
+        }
+      ]
+    },
+    {
+      "path": "api/authors/{author_id}/books/{id}",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Book Id",
+              "required": true
+            }
+          ],
+          "summary": "Fetches a single Book",
+          "responseMessages": [
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "get",
+          "nickname": "Api::V1::Books#show"
+        }
+      ]
+    },
+    {
+      "path": "api/authors/{author_id}/books/{id}",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "header",
+              "name": "Authentication",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Book Id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "book[title]",
+              "type": "string",
+              "description": "Book Title",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "book[author_id]",
+              "type": "string",
+              "description": "Author's Book",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "book[genre]",
+              "type": "string",
+              "description": "Book Genre",
+              "required": true,
+              "allowableValues": {
+                "valueType": "LIST",
+                "values": [
+                  "undefined",
+                  "poetry",
+                  "crime",
+                  "romance",
+                  "horror",
+                  "fantasy",
+                  "mystery",
+                  "western"
+                ]
+              }
+            }
+          ],
+          "summary": "Updates an existing Book",
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            },
+            {
+              "code": 406,
+              "responseModel": null,
+              "message": "Not Acceptable"
+            }
+          ],
+          "method": "patch",
+          "nickname": "Api::V1::Books#update"
+        }
+      ]
+    },
+    {
+      "path": "api/authors/{author_id}/books/{id}",
+      "operations": [
+        {
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "Book Id",
+              "required": true
+            }
+          ],
+          "summary": "Deletes an existing Book",
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "method": "delete",
+          "nickname": "Api::V1::Books#destroy"
+        }
+      ]
+    }
+  ]
+}

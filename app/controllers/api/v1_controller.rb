@@ -4,6 +4,27 @@ module Api
   respond_to :json
   before_action :authenticate!, only: [:create, :update, :destroy]
 
+  # Ensure Swagger methods definition
+  class << self
+    Swagger::Docs::Generator::set_real_methods
+
+    def inherited(subclass)
+      super
+      subclass.class_eval do
+        setup_basic_api_documentation
+      end
+    end
+
+    private
+    def setup_basic_api_documentation
+      [:create, :update, :delete].each do |api_action|
+        swagger_api api_action do
+          param :header, 'Authentication', :string, :required, 'Authentication token'
+        end
+      end
+    end
+  end
+
    def index
     collection = load_collection
     present_data(collection)

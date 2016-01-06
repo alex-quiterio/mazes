@@ -1,0 +1,23 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "/",
+  "apis": [
+    {
+      "path": "api/v1/books.{format}",
+      "description": "Guttenberg Books"
+    },
+    {
+      "path": "api/v1/authors.{format}",
+      "description": "Guttenberg Authors"
+    },
+    {
+      "path": "api/v1/users.{format}",
+      "description": "Guttenberg Users"
+    },
+    {
+      "path": "api/v1/sessions.{format}",
+      "description": "API Sessions"
+    }
+  ]
+}
