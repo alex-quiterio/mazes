@@ -15,7 +15,7 @@ describe Api::V1::SessionsController, type: :controller do
       end
       res = jsonfy(response.body)
       expect(response).to be_ok
-      expect(res[:token]).to eql(user.remember_token)
+      expect(res[:token]).to eql(user.reload.remember_token)
       expect(res[:ttl]).to eql(expected_session_ttl_end.to_s)
     end
 
