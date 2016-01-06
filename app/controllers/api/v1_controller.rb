@@ -15,7 +15,6 @@ module Api
    end
 
    def create
-    insert_user_activity_on_resource
     resource = build_resource
     save_resource(resource) ? present_data(resource) : present_error(resource)
    end

@@ -5,7 +5,11 @@ module Api
    private
 
    def resource_params
-    params.require(:user).permit(:name, :email)
+    if current_user.admin?
+     params.require(:user).permit(:email, :password, :password_confirmation, :role)
+    else
+     params.require(:user).permit(:email, :password, :password_confirmation)
+    end
    end
 
   end

@@ -2,6 +2,8 @@ module Api
   module V1
     class BooksController < V1Controller
 
+      before_action :insert_user_activity_on_resource, only: [:create]
+
       private
 
       def resource_scope
