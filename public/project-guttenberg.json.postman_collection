@@ -1,0 +1,251 @@
+{
+	"id": "b3d9cab1-af88-d433-5034-e8b9ab8ecb0a",
+	"name": "project-guttenberg",
+	"description": "",
+	"order": [
+		"e3235751-e94b-d83f-6540-3cfec4ff7059",
+		"87d609f8-3def-f970-df29-5e3d699bdc87",
+		"1970ac48-bdef-2617-dc23-33847748ff1c",
+		"a98d7e9a-b0d1-42a2-1e41-d843471c7187",
+		"df1f8fd0-e8c2-36ec-6171-d3aa89da11e7",
+		"42182104-59e7-d457-201d-f4e1c783cfa8",
+		"09f83c89-7b9c-d5af-cd33-58b3475e76cb"
+	],
+	"folders": [],
+	"timestamp": 1452045144351,
+	"owner": "14325",
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "09f83c89-7b9c-d5af-cd33-58b3475e76cb",
+			"headers": "Accept: application/vnd.myst-v1+json\nAuthorization: jt-5RSNS5U_CvTGwAAVw\n",
+			"url": "http://0.0.0.0:9292/api/authors.json",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "b3d9cab1-af88-d433-5034-e8b9ab8ecb0a",
+			"data": [
+				{
+					"key": "author[name]",
+					"value": "George Orwell",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "author[nationality]",
+					"value": "English",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "Create a new Author",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1452045947936,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "1970ac48-bdef-2617-dc23-33847748ff1c",
+			"headers": "Accept: application/vnd.myst-v1+json\nAuthorization: jt-5RSNS5U_CvTGwAAVw\n",
+			"url": "http://0.0.0.0:9292/api/users/3/authors.json",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "b3d9cab1-af88-d433-5034-e8b9ab8ecb0a",
+			"data": [
+				{
+					"key": "email",
+					"value": "mr_admin@guttenberg.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "ars inveniendi",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "List Authors from a specific User",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1452045731151,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "42182104-59e7-d457-201d-f4e1c783cfa8",
+			"headers": "Accept: application/vnd.myst-v1+json\nAuthorization: jt-5RSNS5U_CvTGwAAVw\n",
+			"url": "http://0.0.0.0:9292/api/users/3/books.json",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "b3d9cab1-af88-d433-5034-e8b9ab8ecb0a",
+			"data": [
+				{
+					"key": "email",
+					"value": "mr_admin@guttenberg.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "ars inveniendi",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "List Books from a specific User",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1452045715316,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "87d609f8-3def-f970-df29-5e3d699bdc87",
+			"headers": "Accept: application/vnd.myst-v1+json\nAuthorization: jt-5RSNS5U_CvTGwAAVw\n",
+			"url": "http://0.0.0.0:9292/api/authors.json",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "b3d9cab1-af88-d433-5034-e8b9ab8ecb0a",
+			"data": [
+				{
+					"key": "email",
+					"value": "mr_admin@guttenberg.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "ars inveniendi",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "List Authors Index Action",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1452045647236,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "a98d7e9a-b0d1-42a2-1e41-d843471c7187",
+			"headers": "Accept: application/vnd.myst-v1+json\nAuthorization: jt-5RSNS5U_CvTGwAAVw\n",
+			"url": "http://0.0.0.0:9292/api/books.json",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "b3d9cab1-af88-d433-5034-e8b9ab8ecb0a",
+			"data": [
+				{
+					"key": "email",
+					"value": "mr_admin@guttenberg.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "ars inveniendi",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "List Books Index Action",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1452045628970,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "df1f8fd0-e8c2-36ec-6171-d3aa89da11e7",
+			"headers": "Accept: application/vnd.myst-v1+json\nAuthorization: jt-5RSNS5U_CvTGwAAVw\n",
+			"url": "http://0.0.0.0:9292/api/authors/6/books.json",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "b3d9cab1-af88-d433-5034-e8b9ab8ecb0a",
+			"data": [
+				{
+					"key": "email",
+					"value": "mr_admin@guttenberg.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "ars inveniendi",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"name": "List Books from a specific Author",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1452045683172,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "e3235751-e94b-d83f-6540-3cfec4ff7059",
+			"headers": "Accept: application/vnd.myst-v1+json\n",
+			"url": "http://0.0.0.0:9292/api/users/sign_in.json",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "email",
+					"value": "mr_admin@guttenberg.com",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "ars inveniendi",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1452045581632,
+			"name": "Create Session",
+			"description": "Session will expire within the time stamp provided by TTL",
+			"collectionId": "b3d9cab1-af88-d433-5034-e8b9ab8ecb0a",
+			"responses": []
+		}
+	]
+}
