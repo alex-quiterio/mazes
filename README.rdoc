@@ -3,7 +3,7 @@
 {<img src="https://travis-ci.org/alex-quiterio/mazes.svg" alt="Build Status" />}[https://travis-ci.org/alex-quiterio/mazes]
 
 <b>Ruby version:</b>
-- tested with 2.1.3 
+- tested with 2.1.3
 
 <b>Database creation:</b>
 <code>rake db:migrate</code>
@@ -13,6 +13,23 @@
 
 <b>API Call Examples:</b>
 
+Create a new Session:
+<code>
+curl -X POST -H "Accept: application/vnd.myst-v1+json" -H "Cache-Control: no-cache" -H "Postman-Token: 2885e22e-cee9-dc57-b04e-5222c71d930e" -H "Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW" -F "email=mr_admin@guttenberg.com" -F "password=ars inveniendi" 'http://0.0.0.0:9292/api/users/sign_in.json'
+</code>
+
+Use the token Information to update your Authorization Token and proceed...
+
+To list all the authors already created:
+<code>
+curl -X GET -H "Accept: application/vnd.myst-v1+json" -H "Authorization: <your auth-token here>" -H "Cache-Control: no-cache" -H "Postman-Token: 2591ccf1-ffe3-3deb-2360-8449d7196722" 'http://0.0.0.0:9292/api/authors.json'
+</code>
+
+To list all the books already created:
+curl -X GET -H "Accept: application/vnd.myst-v1+json" -H "Authorization: <your auth-token here>" -H "Cache-Control: no-cache" -H "Postman-Token: 89f84b32-2171-593e-55d7-c4ef104fd220" 'http://0.0.0.0:9292/api/books.json'
+
+To create a new Author:
+curl -X POST -H "Accept: application/vnd.myst-v1+json" -H "Authorization: <your auth-token here>" -H "Cache-Control: no-cache" -H "Postman-Token: 13e28cdd-fa6e-d604-529d-a857361c1658" -H "Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW" -F "author[name]=George Orwell" -F "author[nationality]=English" 'http://0.0.0.0:9292/api/authors.json'
 
 <b>How to run the test suite:</b>
 <code>rake db:test:prepare && rake rspec</code>
