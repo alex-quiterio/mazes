@@ -26,10 +26,14 @@ curl -X GET -H "Accept: application/vnd.myst-v1+json" -H "Authorization: <your a
 </code>
 
 - <b>To list all the books already created:</b>
+<code>
 curl -X GET -H "Accept: application/vnd.myst-v1+json" -H "Authorization: <your auth-token here>" -H "Cache-Control: no-cache" -H "Postman-Token: 89f84b32-2171-593e-55d7-c4ef104fd220" 'http://0.0.0.0:9292/api/books.json'
+</code>
 
 - <b>To create a new Author:</b>
+<code>
 curl -X POST -H "Accept: application/vnd.myst-v1+json" -H "Authorization: <your auth-token here>" -H "Cache-Control: no-cache" -H "Postman-Token: 13e28cdd-fa6e-d604-529d-a857361c1658" -H "Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW" -F "author[name]=George Orwell" -F "author[nationality]=English" 'http://0.0.0.0:9292/api/authors.json'
+</code>
 
 <b>How to run the test suite:</b>
 <code>rake db:test:prepare && rake rspec</code>
