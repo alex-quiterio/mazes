@@ -2,8 +2,6 @@ module Api
   module V1
     class SessionsController < ApplicationController
 
-      skip_before_action :verify_authenticity_token
-
       def create
         user = User.find_by_email(params[:email])
         if user.present? && user.valid_password?(params[:password])
